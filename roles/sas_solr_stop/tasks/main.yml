@@ -1,0 +1,7 @@
+---
+# tasks file for sas_solr_stop
+- name: Stop SOLR
+  shell: /sas/home/solr-5.5.5/bin/solr stop -p 8983
+
+- name: Check if SOLR is stoped
+  shell: /sas/home/solr-5.5.5/bin/solr status

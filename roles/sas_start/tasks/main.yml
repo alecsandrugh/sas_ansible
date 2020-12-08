@@ -1,0 +1,12 @@
+---
+- name: Start Deployment Agent
+  shell: /sas/home/SASDeploymentAgent/9.4/agentadmin.sh start
+
+- name: Check if Deplomyent Agent is running
+  shell: /sas/home/SASDeploymentAgent/9.4/agentadmin.sh stat up
+
+- name: Start SAS Services
+  shell: /sas/config/Lev1/sas.servers start
+
+- name: Check if SAS Services are running
+  shell: /sas/config/Lev1/sas.servers status

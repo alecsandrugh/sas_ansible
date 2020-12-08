@@ -1,0 +1,13 @@
+---
+# tasks file for sas_stop
+- name: Stop SAS Services
+  shell: /sas/config/Lev1/sas.servers stop
+
+- name: Check is SAS Services are stoped
+  shell: /sas/config/Lev1/sas.servers status
+
+- name: Stop Deployment Agent
+  shell: /sas/home/SASDeploymentAgent/9.4/agentadmin.sh stop
+
+- name: Check if Deplomyent Agent is stoped
+  shell: /sas/home/SASDeploymentAgent/9.4/agentadmin.sh stat down

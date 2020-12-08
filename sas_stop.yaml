@@ -1,0 +1,29 @@
+---
+- hosts: SAS_vaar
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_stop
+
+- hosts: SAS_mid_tier
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_stop
+    - sas_solr_stop
+
+- hosts: SAS_compute
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_stop
+
+- hosts: SAS_Metadata
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_stop

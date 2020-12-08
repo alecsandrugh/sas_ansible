@@ -1,0 +1,44 @@
+---
+- hosts: sas_metadata
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_start
+  
+- hosts: sas_compute
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_start
+  
+- hosts: sas_mid_tier
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_solr_start
+    - sas_start
+
+- hosts: sas_vaar
+  remote_user: sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_start
+
+- hosts: sas_vaar
+  remote_user: sassrv
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_lasr_vaar_start
+
+- hosts: sas_compute
+  remote_user: sassrv
+  become: yes
+  become_method: sudo
+  roles:
+    - sas_lasr_comp_start
+

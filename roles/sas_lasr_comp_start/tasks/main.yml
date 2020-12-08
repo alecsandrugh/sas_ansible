@@ -1,0 +1,10 @@
+---
+# tasks file for sas_lasr_comp_start
+- name:
+  shell: /sas/config/Lev1/SASApp/sas.sh -sysin
+
+- name:
+  shell: /sas/config/Lev1/SASApp/SASEnvironment/SASCode/Jobs/LOAD_TO_VA.sas -log
+
+- name:
+  shell: /sas/config/Lev1/SASApp/SASEnvironment/SASCode/Jobs/

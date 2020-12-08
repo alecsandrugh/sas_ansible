@@ -1,0 +1,19 @@
+---
+# tasks file for sas_lasr_vaar_start
+- name: Start SAS LASR Servers sas.sh -sysin
+  shell: nohup /sas/config/Lev1/SASAppVA/sas.sh -sysin
+
+- name: Start SAS LASR Servers start_LASR.sas -log
+  shell: /sas/config/Lev1/SASAppVA/SASEnvironment/SASCode/Jobs/start_LASR.sas -log
+
+- name: Start SAS LASR Servers
+  shell: /sas/config/Lev1/SASAppVA/SASEnvironment/SASCode/Jobs/ &
+
+- name: Start SAS LASR Servers Start SAS LASR Servers 
+  shell: nohup /sas/config/Lev1/SASAppVA/sas.sh -sysin
+
+- name: Start SAS LASR Servers start_RGF_LASR.sas-log
+  shell: /sas/config/Lev1/SASAppVA/SASEnvironment/SASCode/Jobs/start_RGF_LASR.sas-log
+
+- name: Start SAS LASR Servers 
+  shell: /sas/config/Lev1/SASAppVA/SASEnvironment/SASCode/Jobs/ &
